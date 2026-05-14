@@ -95,6 +95,27 @@ function themeInit($archive)
 {
 }
 
+// 移除内容中的图片，只保留文本
+function processContentWithoutImages($content)
+{
+    if (empty($content)) {
+        return '';
+    }
+    
+    // 移除 HTML img 标签
+    $content = preg_replace('/<img[^>]*>/i', '', $content);
+    
+    // 移除 Markdown 内联图片格式：![alt](url)
+    $content = preg_replace('/!\[[^\]]*\]\([^)]+\)/iu', '', $content);
+    
+    // 移除 Markdown 引用式图片定义：[1]: url
+    $content = preg_replace('/^\s*\[\d+\]\s*:\s*\S+/im', '', $content);
+    
+    // 移除 Markdown 图片引用：![alt][1]
+    $content = preg_replace('/!\[[^\]]*\]\[\d+\]/iu', '', $content);
+    
+    return $content;
+}
 function processContentWithImportantText($content)
 {
     if (empty($content)) {

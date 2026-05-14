@@ -68,11 +68,11 @@
                     $this->content();
                     $content = ob_get_clean();
                     
-                    if (function_exists('processContentWithImportantText')) {
-                        echo processContentWithImportantText($content);
+                     if (function_exists('processContentWithImportantText') && function_exists('processContentWithoutImages')) {
+                        echo processContentWithImportantText(processContentWithoutImages($content));
                     } else {
                         echo $content;
-                    }
+                    } 
                     ?>
                     <?php 
                         $domain = parse_url($this->options->siteUrl,PHP_URL_HOST);
