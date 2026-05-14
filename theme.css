@@ -1,0 +1,1004 @@
+/* ============================================
+   朝中社风格主题 - 完전样式표
+   완전 매칭 kcna.kp 공식 웹사이트
+   ============================================ */
+
+/* ===== 글꼴 정의 ===== */
+/* 使用系统字体替代缺失的朝鲜字体 */
+@font-face {
+    font-family: 'wklgoth';
+    src: local('SimHei'), local('Heiti SC'), local('Malgun Gothic');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kpcholim';
+    src: local('SimHei'), local('Heiti SC'), local('Malgun Gothic');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WKLGothic';
+    src: local('SimHei'), local('Heiti SC'), local('Malgun Gothic');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===== CSS 변수 ===== */
+:root {
+    --primary-color: #1664B2;
+    --secondary-color: #083982;
+    --important-text-color: #AE0101;
+    --deep-red: #DD0000;
+    --light-red-bg: #FAF1F1;
+    --title-bg: #EFF1F3;
+    --activity-title-bg: #FCEDED;
+    --text-color: #333;
+    --border-color: #ddd;
+    --hover-color: #083982;
+}
+
+/* ===== 기본 리셋 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.8;
+    color: #000;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+body a {
+    cursor: pointer;
+}
+
+body a:hover,
+body a:active {
+    text-decoration: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #AE0101;
+}
+
+/* ===== 모바일 상단 바 ===== */
+.mobile-bar {
+    height: 24px;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #193E63;
+    opacity: 0.9;
+    display: none;
+}
+
+.mobile-bar .home {
+    float: left;
+    padding-top: 3px;
+    padding-left: 0px !important;
+}
+
+.mobile-bar div {
+    float: right;
+    padding: 3px 10px 3px 10px;
+}
+
+.mobile-bar div.active {
+    background-color: #333333;
+}
+
+.mobile-bar i {
+    color: white;
+    cursor: pointer;
+    padding: 0 0 0 5px;
+    font-size: 17px;
+}
+
+.mobile-bar a i.fa {
+    margin: 0 4px 0 7px;
+    font-size: 1.1em;
+}
+
+.mobile-bar div.home i {
+    font-size: 20px;
+}
+
+.mobile-bar .content {
+    position: absolute;
+    right: 0;
+    background-color: #000;
+    padding-bottom: 10px;
+    z-index: 1;
+    margin-top: 3px;
+    border-radius: 0 0 6px 6px;
+    display: none;
+}
+
+.mobile-bar .content a {
+    display: block;
+    padding: 10px 10px 0 0;
+    color: #dadada;
+    border-bottom: 1px dotted #404141;
+    font-weight: bold;
+}
+
+.mobile-bar .content ul.first-line a {
+    color: #FB8787 !important;
+}
+
+.mobile-bar .content ul li {
+    list-style: none;
+    border-bottom: 1px dotted #404141;
+}
+
+.mobile-bar .content ul {
+    margin: 0;
+    text-align: left !important;
+    padding: 0px 8px 0 10px;
+}
+
+/* ===== 헤더 영역 ===== */
+.page-header {
+    margin: 0 0 3px 0;
+    padding-bottom: 0;
+    border-bottom: 2px solid #1664B2;
+    text-align: center;
+    background: url(./home-large.jpg) no-repeat;
+    background-size: cover;
+}
+
+.header .kcna-link {
+    display: block;
+    text-align: center;
+}
+
+.kcna-logo {
+    max-width: 400px;
+}
+
+/* ===== 언어 바 ===== */
+.language-bar {
+    margin: 4px 0 10px 0;
+    text-align: center;
+}
+
+.language-bar a {
+    padding: 0 4px;
+    color: #09539C;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+.language-bar a.active {
+    color: #09539C;
+    font-weight: bold;
+}
+
+.language-bar span {
+    color: #171b96;
+    padding-left: 2px;
+}
+
+/* ===== 검색 상자 ===== */
+.search-form {
+    position: relative;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin: 0;
+}
+
+.search-div {
+    text-align: center;
+    font-size: 12px;
+}
+
+.search-form input[type="text"].search-text {
+    border: 1px solid #b0b0b0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    border-radius: 10px 10px 10px 10px;
+    height: 22px;
+    padding: 0 6px;
+    line-height: 1em;
+    width: 180px;
+    background-color: #FFFFFF;
+}
+.img-paper{
+    cursor: none;
+}
+.search-form .search-btn {
+    line-height: 21px;
+    height: 25px;
+    background-color: #4077c5;
+    border: 0px outset #409aef;
+    color: white;
+    padding: 0 15px;
+    width: 90px;
+    margin-left: 20px;
+    vertical-align: top;
+}
+
+.search-form .warningtxt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    margin: 2px;
+    height: 22px;
+}
+
+.mobile-search-container {
+    margin-top: 10px;
+    display: none;
+}
+
+.mobile-search-container input {
+    width: 70%;
+}
+
+/* ===== 네비게이션 메뉴 ===== */
+.menu-container {
+    margin-top: 7px;
+}
+
+.menu-container .menu-block {
+    margin: 2px 0;
+    font-size: 12px;
+}
+
+.nav-menu {
+    margin: 0;
+    padding: 3px 15px 0px 30px;
+    text-align: center;
+    background-color: #1664B2;
+    border-radius: 30px 0px 0px 0px;
+    color: #FFFFFF;
+}
+
+.nav-menu li {
+    list-style: none;
+    display: inline-block;
+    padding: 0 8px;
+    border-right: 1px solid #fff;
+}
+
+.nav-menu li:last-child {
+    border-right: none;
+}
+
+.menu-container .menu-block a {
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.menu-container .menu-block a:hover {
+    color: #FFD700;
+}
+
+/* ===== 페이지 컨테이너 ===== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.page-container {
+    border-top: 1px solid #083982;
+    margin-top: 3px;
+    min-height: calc(100% - 400px);
+    background-color: #ffffff;
+    padding: 15px 20px 0 20px;
+}
+
+.container {
+    text-align: left;
+}
+
+.split {
+    clear: both;
+}
+
+/* ===== 위젯 스타일 - 완전히 조선중앙통신사 스타일 ===== */
+.widget {
+    padding-top: 20px;
+}
+
+.activity.widget {
+    padding-top: 0px;
+}
+
+.cat-title {
+    font-size: 17px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 35px;
+    border-radius: 3px;
+    box-shadow: 0 4px 4px 0 rgba(10, 10, 10, 0.2);
+    cursor: pointer;
+    background: #EFF1F3;
+    border: 1px solid #EBE9E9;
+    margin-bottom: 10px;
+}
+
+.activity .cat-title {
+    background: #FCEDED;
+    color: #DD0000;
+    font-weight: bold;
+    border: 1px solid #FDE4E4;
+}
+
+.activity .cat-title a {
+    color: #DD0000 !important;
+}
+
+.cat-title a {
+    color: #00417B;
+}
+
+.cat-title a i {
+    float: right;
+}
+
+.widget i.fa-list {
+    font-size: 17px;
+    text-align: right;
+    padding-top: 10px;
+}
+
+.widget-content {
+    clear: both;
+    border-radius: 7px;
+    border: 1px solid #E4E3E3;
+    padding: 10px;
+}
+
+.activity-background {
+    padding: 10px;
+    border-radius: 7px;
+    border: 1px solid #FCC8C8;
+    background-color: #FAF1F1;
+    margin-bottom: 10px;
+}
+
+.activity .gallerys,
+.activity .articles {
+    padding: 0;
+}
+
+.activity .gallerys .img {
+    position: relative;
+    display: inline-block;
+}
+
+.activity .img-title {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 15px;
+    color: #000;
+}
+
+.activity .gallery .item {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* ===== 목록 항목 스타일 ===== */
+.pointer {
+    background: url("data:image/gif;base64,R0lGODlhBAAEAIAAAP///yH5BAEAAAAALAAAAAAEAAQAAAIFhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpcBADs=") no-repeat 2px 5px;
+    padding-left: 15px;
+    font-size: 12px;
+}
+
+.pointer1 {
+    background: url("data:image/gif;base64,R0lGODlhBAAEAIAAAP///yH5BAEAAAAALAAAAAAEAAQAAAIFhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpcBADs=") no-repeat 2px 5px;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 2;
+    color: #000;
+}
+
+.pointer2 {
+    background: url("data:image/gif;base64,R0lGODlhBAAEAIAAAP///yH5BAEAAAAALAAAAAAEAAQAAAIFhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpcBADs=") no-repeat 0px 5px;
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 2;
+    color: #000;
+}
+
+.sidebar .pointer1 {
+    padding-left: 10px;
+    background-position: 0px 5px;
+}
+
+.rpointer {
+    background: url(../img/home/rpoint.png) no-repeat 0px 5px;
+    padding-left: 15px;
+}
+
+.widget p {
+    color: #000;
+    font-size: 14px;
+    line-height: 2.2;
+    border-bottom: 1px dotted #ccc;
+    margin: 0;
+}
+
+.widget p a,
+.gallerys .img-title a {
+    color: #000000;
+    text-decoration: none;
+}
+
+.widget p a:focus,
+.widget p a:hover {
+    color: #AE0101;
+}
+
+/* ===== 날짜 표시 ===== */
+.datemark {
+    color: #333;
+    font-size: 0.85em;
+}
+
+.publish-time {
+    color: #333;
+    font-size: 0.85em;
+    margin-left: 3px;
+}
+
+nobr {
+    white-space: nowrap;
+}
+
+/* ===== 중요한 텍스트 스타일 - 완전히 조선중앙통신사 스타일 fSpecCs ===== */
+/* 用户可在后台配置需要放大并加粗的文本内容 */
+.fSpecCs,
+.important-text {
+    font-weight: bold !important;
+    font-size: 1.1em !important;
+    color: #AE0101 !important;
+    display: inline;
+    line-height: inherit;
+}
+
+.zoom-small .fSpecCs,
+.zoom-small .important-text {
+    font-size: 1.2em !important;
+}
+
+.zoom-medium .fSpecCs,
+.zoom-medium .important-text {
+    font-size: 1.35em !important;
+}
+
+.zoom-large .fSpecCs,
+.zoom-large .important-text {
+    font-size: 1.5em !important;
+}
+
+/* ===== 사이드바 ===== */
+.side-container {
+    padding-right: 0px;
+}
+
+.sidebar-container {
+    padding-right: 0px;
+}
+
+.sidebar.widget div.description {
+    padding-left: 16px;
+    margin-bottom: 10px;
+    padding-top: 8px;
+}
+
+.sidebar.widget div.description p {
+    text-indent: 10px;
+    color: #333;
+    margin: 0;
+    padding: 0px;
+    font-size: 12px;
+}
+
+.widget .list {
+    text-align: right;
+}
+
+.activity.widget .list i {
+    color: #DD0000;
+}
+
+/* ===== 푸터 ===== */
+.footer {
+    background: #fafafa;
+    clear: both;
+}
+
+.footer .container {
+    background: #fff;
+}
+
+.footer-container {
+    border-top: 1px solid #a4a4a4;
+    background-color: #ececec;
+}
+
+.footer-container .container {
+    text-align: center;
+    background-color: #ececec;
+}
+
+.copy-right {
+    color: #333;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.page-footer .row,
+.bbt {
+    border-top: 1px solid #ddd;
+}
+
+.page-footer .row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.footer-menu-container {
+    margin-top: 10px;
+}
+
+.footer-menu-container ul {
+    line-height: 22px;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu-container .nav-menu {
+    background-color: #FFF !important;
+    border-radius: 0;
+    padding: 5px 0;
+}
+
+.footer-menu-container .menu-block {
+    padding: 10px 0;
+}
+
+.footer-menu-container .menu-block ul li {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='14' viewBox='0 0 4 14'%3E%3Crect x='1' y='4' width='2' height='6' fill='%23ddd'/%3E%3C/svg%3E") no-repeat left center;
+    padding-left: 12px;
+    padding-right: 8px;
+    border-right: none;
+}
+
+.footer-menu-container .menu-block ul li.first {
+    background: none;
+}
+
+.footer-menu-container .menu-block a {
+    color: #000000;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+.footer-menu-container .menu-block a:hover {
+    color: #AE0101;
+}
+
+/* ===== 스크롤 위로 버튼 ===== */
+.scroll-to-top {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    right: 15px;
+    bottom: 68px;
+    cursor: pointer;
+    border: 4px solid #657383;
+    background-color: transparent;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 1px 0px 0px 7px;
+    display: none;
+}
+
+.scroll-to-top>i {
+    color: #657383;
+}
+
+.scroll-to-top.red {
+    background: url(../img/activity/top.png) no-repeat center center;
+}
+
+/* ===== 반응형 디자인 ===== */
+@media screen and (max-width: 767px) {
+    .mobile-bar {
+        display: block;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .language-bar {
+        display: none;
+    }
+    
+    .mobile-search-container {
+        display: block;
+    }
+    
+    .page-header {
+        background: url(./home-small.jpg) no-repeat;
+        background-size: cover;
+        padding-top: 25px;
+    }
+    
+    .page-header.padding-disable {
+        padding-top: 0 !important;
+    }
+    
+    .page-header .search-form {
+        display: none;
+    }
+    
+    .sm-hidden {
+        display: none;
+    }
+    
+    .scroll-to-top {
+        right: 5px;
+    }
+    
+    .copy-right {
+        margin: 0;
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .mobile-bar {
+        display: none;
+    }
+    
+    .nav-menu {
+        display: block;
+        color: #fff;
+        padding-top: 3px;
+    }
+    
+    .language-bar {
+        display: block;
+        text-align: center;
+        margin: 4px 0 0 0;
+    }
+    
+    .mobile-search-container {
+        display: none;
+    }
+    
+    .page-header {
+        background-size: cover;
+        padding-top: 0;
+    }
+    
+    .page-header .search-form {
+        display: block;
+    }
+    
+    .side-container,
+    .footer-menu-container,
+    .mobile-hidden {
+        display: block;
+    }
+    
+    .com-hidden {
+        display: none;
+    }
+    
+    .activity .articles {
+        padding-left: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .page-header {
+        }
+    
+    .nav-menu {
+        padding: 3px 15px 0px 30px;
+        color: #FFFFFF;
+        border-radius: 30px 0px 0px 0px;
+    }
+    
+    .menu-container .nav-menu {
+        float: right;
+    }
+    
+    .language-bar {
+        text-align: right;
+        margin: 4px 11px 6px 0;
+    }
+    .page-header {
+    margin: 0 0 3px 0;
+    padding-bottom: 0;
+    border-bottom: 2px solid #1664B2;
+    text-align: center;
+    background: url(./home-large.jpg) no-repeat;
+    background-size: cover;
+    }
+}
+
+/* ===== 조선어체 지원 ===== */
+body.kp,
+body.kp .datepicker.dropdown-menu,
+.lang-link-kp {
+    font-family: 'wklgoth', 'kpcholim', 'WKLGothic', KP CheonRiMaChe, WKLGothic, PRK P Gothic, Gulim, Dotum !important;
+}
+
+.p_blank {
+    font-family: Arial;
+}
+
+body.en,
+body.es,
+body.cn,
+body.jp,
+body.ru {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body.ru a {
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+/* ===== 기사 상세 페이지 스타일 - 완전히 조선중앙통신사 공식 웹사이트 스타일 ===== */
+.article-content-title {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #1664B2;
+}
+
+.article-main-title {
+    text-align: center;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.article-main-title strong {
+    font-weight: bold;
+}
+
+.media-icon {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.media-icon a {
+    color: #AE0101;
+    font-size: 24px;
+}
+
+.media-icon a:hover {
+    color: #DD0000;
+}
+
+.article-content-body {
+    margin-top: 20px;
+}
+
+.content-wrapper {
+    line-height: 2;
+    font-size: 16px;
+    color: #333;
+}
+
+.content-wrapper p {
+    margin-bottom: 15px;
+    text-indent: 2em;
+}
+
+.content-wrapper img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.publish-time {
+    display: block;
+    text-align: left;
+    color: #666;
+    font-size: 14px;
+    margin-top: 30px;
+    padding-top: 20px;
+}
+
+/* ===== 스크롤 위로 버튼 ===== */
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    height: 314.667px;
+    overflow: hidden;
+}
+
+.gallery-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+}
+
+.gallery-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.gallery-item .item {
+    height: 314.667px;
+}
+
+.gallery-item .img {
+    position: relative;
+    height: 309.667px;
+    overflow: hidden;
+    
+}
+
+.gallery-item .img img {
+    max-height: 309.667px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item .img a:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item .img-title {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.gallery-item .img-title a {
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.gallery-item .img-title a:hover {
+    color: #AE0101;
+}
+
+.gallery-item .img-title .datemark {
+    color: #666;
+    font-size: 14px;
+}
+
+/* 스크롤 제어 버튼 */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: none;
+}
+
+.carousel-prev,
+.carousel-next {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 40px;
+    text-align: center;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(174, 1, 1, 0.8);
+    transform: scale(1.1);
+}
+
+/* 스크롤 표시기 */
+.carousel-indicators {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.indicator:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: #AE0101;
+    border-color: #fff;
+    transform: scale(1.3);
+}
+
+/* 모바일 적응 */
+@media (max-width: 768px) {
+    .gallery-carousel {
+        height: 250px;
+    }
+    
+    .gallery-item .item {
+        height: 250px;
+    }
+    
+    .gallery-item .img {
+        height: 245px;
+    }
+    
+    .carousel-prev,
+    .carousel-next {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+        line-height: 35px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}

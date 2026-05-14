@@ -1,0 +1,7 @@
+./doc/*
+/doc
+/fonts
+/img
+/kana
+favicon.ico
+favicon.svg
