@@ -7,13 +7,21 @@
             
             <!-- 搜索结果页面 - 朝中社风格 -->
             <div class="category-content content">
-                <!-- 搜索结果标题 -->
-                <div class="category-title category-title-" style="text-align:center;padding:20px 0;border-bottom:2px solid #AE0101;">
-                    <h2 style="font-size:20px;color:#333;margin:0;">搜索结果</h2>
-                </div>
-                
-                <!-- 文章列表区域 -->
-                    <div class="article-wrapper" style="padding:20px;">
+            <!-- 分类标题 -->
+            <div class="category-title category-title-" style="text-align:center;padding:20px 0;border-bottom:2px solid #AE0101;">
+                    <h1 style="font-size:22px;color:#333;margin:0;">
+                    <?php $this->archiveTitle(array(
+                        'category' => _t('分类：%s'),
+                        'search' => _t('搜索：%s'),
+                        'tag' => _t('标签：%s'),
+                        'author' => _t('作者：%s')
+                    ), '', ''); ?>
+                </h1>
+            </div>
+        
+
+            <!-- 文章列表 -->
+                <div class="article-wrapper" style="padding:20px;">
                 <?php if ($this->have()): ?>
                     <ul class="list-unstyled">
                         <?php while ($this->next()): ?>
@@ -59,22 +67,12 @@
                     </div>
                 <?php endif; ?>
             </div>
-                
-                <!-- 分页 -->
-                <?php if ($this->have()): ?>
-                <div class="clearfix"></div>
-                <div class="text-center pagination-div" style="padding:20px;">
-                    <?php $this->pageNav('&laquo;', '&raquo;', 2, '...', array(
-                        'wrapTag' => 'ul',
-                        'itemTag' => 'li',
-                        'currentClass' => 'active',
-                        'prevClass' => 'prev-ctrl',
-                        'nextClass' => 'next-ctrl'
-                    )); ?>
-                </div>
-                <?php endif; ?>
+
+            <!-- 分页 -->
+            <div class="pagination" style="text-align:center;margin-top:30px;">
+                <?php $this->pageNav('&laquo;', '&raquo;', 2, '...', array('wrapTag' => 'ul', 'wrapClass' => 'pagination', 'itemTag' => 'li', 'textTag' => 'span', 'currentClass' => 'active', 'prevClass' => '', 'nextClass' => '')); ?>
             </div>
-            
+            </div>
         </div>
     </div>
 </div>
